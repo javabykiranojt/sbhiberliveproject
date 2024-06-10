@@ -1,12 +1,16 @@
 package com.tka.entity;
 
-import javax.persistence.*;
+import java.sql.Time;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.sql.Time;
-import java.time.DayOfWeek;
 
 @Entity
 @Table(name = "class_schedules")
@@ -24,9 +28,8 @@ public class ClassSchedule {
 	@Column(name = "classroom_id", nullable = false)
 	private Long classroomId;
 
-	@Enumerated(EnumType.STRING)
 	@Column(name = "day_of_week", nullable = false)
-	private DayOfWeek dayOfWeek;
+	private String dayOfWeek;
 
 	@Column(name = "start_time", nullable = false)
 	private Time startTime;
